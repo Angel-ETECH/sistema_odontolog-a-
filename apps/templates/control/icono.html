@@ -1,0 +1,8 @@
+{% load static %}
+{% if nombre == 'marca' %}
+<img class="icono logo-sitio" src="{% static 'control/img/logo.png' %}" alt="" aria-hidden="true" width="72" height="72">
+{% elif nombre == 'pacientes' or nombre == 'odontologos' or nombre == 'especialidades' or nombre == 'citas' or nombre == 'diagnosticos' or nombre == 'tratamientos' or nombre == 'recetas' or nombre == 'reportes' %}
+{% with ruta='control/img/'|add:nombre|add:'.png' %}<img class="icono icono-flaticon" src="{% static ruta %}" alt="" aria-hidden="true" width="32" height="32">{% endwith %}
+{% else %}
+<span class="icono icono-ui ui-{{ nombre }}" aria-hidden="true"></span>
+{% endif %}

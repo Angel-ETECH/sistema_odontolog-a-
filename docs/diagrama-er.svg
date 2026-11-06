@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1170" viewBox="0 0 1600 1170">
+<rect width="1600" height="1170" fill="#f4f7f3"/>
+<style>text{font-family:Segoe UI,Arial,sans-serif}.titulo{font-size:20px;font-weight:700;fill:white}.campo{font-size:14px;fill:#294638}.tipo{font-size:12px;fill:#748377}.nota{font-size:13px;fill:#607568}</style>
+<text x="24" y="34" font-family="Segoe UI,Arial" font-size="24" font-weight="700" fill="#245e50">Sonrisa Perfecta · Diagrama entidad-relación</text>
+<defs><marker id="flecha" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6" fill="none" stroke="#527f65" stroke-width="1.4"/></marker></defs>
+<path d="M374 165 H420" fill="none" stroke="#527f65" stroke-width="2" marker-end="url(#flecha)"/><text x="382" y="153" font-family="Arial" font-size="13" fill="#607568">1:N</text>
+<path d="M595 390 V470" fill="none" stroke="#527f65" stroke-width="2" marker-end="url(#flecha)"/><text x="605" y="442" font-family="Arial" font-size="13" fill="#607568">1:N</text>
+<path d="M374 585 H420" fill="none" stroke="#527f65" stroke-width="2" marker-end="url(#flecha)"/><text x="382" y="573" font-family="Arial" font-size="13" fill="#607568">1:N</text>
+<path d="M770 585 H816" fill="none" stroke="#527f65" stroke-width="2" marker-end="url(#flecha)"/><text x="778" y="573" font-family="Arial" font-size="13" fill="#607568">1:N</text>
+<path d="M1166 565 H1190 V215 H1212" fill="none" stroke="#527f65" stroke-width="2" marker-end="url(#flecha)"/><text x="1174" y="388" font-family="Arial" font-size="13" fill="#607568">1:N</text>
+<path d="M1166 635 H1190 V850 H1212" fill="none" stroke="#527f65" stroke-width="2" marker-end="url(#flecha)"/><text x="1174" y="698" font-family="Arial" font-size="13" fill="#607568">1:N</text>
+<rect x="24" y="70" width="350" height="192" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M36 70 H362 Q374 70 374 82 V119 H24 V82 Q24 70 36 70" fill="#245e50"/>
+<text x="42" y="102" font-family="Arial" font-size="20" font-weight="700" fill="white">Especialidad</text>
+<text x="40" y="143" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="209" y="143" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="40" y="175" font-family="Arial" font-size="14" fill="#294638">nombre</text>
+<text x="209" y="175" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="40" y="207" font-family="Arial" font-size="14" fill="#294638">descripcion</text>
+<text x="209" y="207" font-family="Arial" font-size="12" fill="#748377">TEXT</text>
+<text x="40" y="239" font-family="Arial" font-size="14" fill="#294638">estado</text>
+<text x="209" y="239" font-family="Arial" font-size="12" fill="#748377">VARCHAR(20)</text>
+<rect x="420" y="70" width="350" height="320" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M432 70 H758 Q770 70 770 82 V119 H420 V82 Q420 70 432 70" fill="#245e50"/>
+<text x="438" y="102" font-family="Arial" font-size="20" font-weight="700" fill="white">Odontologo</text>
+<text x="436" y="143" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="605" y="143" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="436" y="175" font-family="Arial" font-size="14" fill="#294638">nombres</text>
+<text x="605" y="175" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="436" y="207" font-family="Arial" font-size="14" fill="#294638">apellidos</text>
+<text x="605" y="207" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="436" y="239" font-family="Arial" font-size="14" fill="#294638">numero_colegiatura</text>
+<text x="605" y="239" font-family="Arial" font-size="12" fill="#748377">VARCHAR(30)</text>
+<text x="436" y="271" font-family="Arial" font-size="14" fill="#294638">telefono</text>
+<text x="605" y="271" font-family="Arial" font-size="12" fill="#748377">VARCHAR(20)</text>
+<text x="436" y="303" font-family="Arial" font-size="14" fill="#294638">correo</text>
+<text x="605" y="303" font-family="Arial" font-size="12" fill="#748377">VARCHAR(254)</text>
+<text x="436" y="335" font-family="Arial" font-size="14" fill="#294638">especialidad</text>
+<text x="605" y="335" font-family="Arial" font-size="12" fill="#748377">FK → Especialidad</text>
+<text x="436" y="367" font-family="Arial" font-size="14" fill="#294638">estado</text>
+<text x="605" y="367" font-family="Arial" font-size="12" fill="#748377">VARCHAR(20)</text>
+<rect x="24" y="470" width="350" height="352" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M36 470 H362 Q374 470 374 482 V519 H24 V482 Q24 470 36 470" fill="#245e50"/>
+<text x="42" y="502" font-family="Arial" font-size="20" font-weight="700" fill="white">Paciente</text>
+<text x="40" y="543" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="209" y="543" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="40" y="575" font-family="Arial" font-size="14" fill="#294638">nombres</text>
+<text x="209" y="575" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="40" y="607" font-family="Arial" font-size="14" fill="#294638">apellidos</text>
+<text x="209" y="607" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="40" y="639" font-family="Arial" font-size="14" fill="#294638">dni</text>
+<text x="209" y="639" font-family="Arial" font-size="12" fill="#748377">VARCHAR(8)</text>
+<text x="40" y="671" font-family="Arial" font-size="14" fill="#294638">fecha_nacimiento</text>
+<text x="209" y="671" font-family="Arial" font-size="12" fill="#748377">DATE</text>
+<text x="40" y="703" font-family="Arial" font-size="14" fill="#294638">telefono</text>
+<text x="209" y="703" font-family="Arial" font-size="12" fill="#748377">VARCHAR(20)</text>
+<text x="40" y="735" font-family="Arial" font-size="14" fill="#294638">direccion</text>
+<text x="209" y="735" font-family="Arial" font-size="12" fill="#748377">VARCHAR(200)</text>
+<text x="40" y="767" font-family="Arial" font-size="14" fill="#294638">correo</text>
+<text x="209" y="767" font-family="Arial" font-size="12" fill="#748377">VARCHAR(254)</text>
+<text x="40" y="799" font-family="Arial" font-size="14" fill="#294638">created_at</text>
+<text x="209" y="799" font-family="Arial" font-size="12" fill="#748377">DATETIME</text>
+<rect x="420" y="470" width="350" height="320" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M432 470 H758 Q770 470 770 482 V519 H420 V482 Q420 470 432 470" fill="#245e50"/>
+<text x="438" y="502" font-family="Arial" font-size="20" font-weight="700" fill="white">Cita</text>
+<text x="436" y="543" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="605" y="543" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="436" y="575" font-family="Arial" font-size="14" fill="#294638">paciente</text>
+<text x="605" y="575" font-family="Arial" font-size="12" fill="#748377">FK → Paciente</text>
+<text x="436" y="607" font-family="Arial" font-size="14" fill="#294638">odontologo</text>
+<text x="605" y="607" font-family="Arial" font-size="12" fill="#748377">FK → Odontologo</text>
+<text x="436" y="639" font-family="Arial" font-size="14" fill="#294638">fecha</text>
+<text x="605" y="639" font-family="Arial" font-size="12" fill="#748377">DATE</text>
+<text x="436" y="671" font-family="Arial" font-size="14" fill="#294638">hora</text>
+<text x="605" y="671" font-family="Arial" font-size="12" fill="#748377">TIME</text>
+<text x="436" y="703" font-family="Arial" font-size="14" fill="#294638">motivo</text>
+<text x="605" y="703" font-family="Arial" font-size="12" fill="#748377">VARCHAR(200)</text>
+<text x="436" y="735" font-family="Arial" font-size="14" fill="#294638">estado</text>
+<text x="605" y="735" font-family="Arial" font-size="12" fill="#748377">VARCHAR(20)</text>
+<text x="436" y="767" font-family="Arial" font-size="14" fill="#294638">observaciones</text>
+<text x="605" y="767" font-family="Arial" font-size="12" fill="#748377">TEXT</text>
+<rect x="816" y="470" width="350" height="224" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M828 470 H1154 Q1166 470 1166 482 V519 H816 V482 Q816 470 828 470" fill="#245e50"/>
+<text x="834" y="502" font-family="Arial" font-size="20" font-weight="700" fill="white">Diagnostico</text>
+<text x="832" y="543" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="1001" y="543" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="832" y="575" font-family="Arial" font-size="14" fill="#294638">cita</text>
+<text x="1001" y="575" font-family="Arial" font-size="12" fill="#748377">FK → Cita</text>
+<text x="832" y="607" font-family="Arial" font-size="14" fill="#294638">descripcion</text>
+<text x="1001" y="607" font-family="Arial" font-size="12" fill="#748377">TEXT</text>
+<text x="832" y="639" font-family="Arial" font-size="14" fill="#294638">recomendaciones</text>
+<text x="1001" y="639" font-family="Arial" font-size="12" fill="#748377">TEXT</text>
+<text x="832" y="671" font-family="Arial" font-size="14" fill="#294638">fecha</text>
+<text x="1001" y="671" font-family="Arial" font-size="12" fill="#748377">DATE</text>
+<rect x="1212" y="70" width="350" height="320" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M1224 70 H1550 Q1562 70 1562 82 V119 H1212 V82 Q1212 70 1224 70" fill="#245e50"/>
+<text x="1230" y="102" font-family="Arial" font-size="20" font-weight="700" fill="white">Tratamiento</text>
+<text x="1228" y="143" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="1397" y="143" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="1228" y="175" font-family="Arial" font-size="14" fill="#294638">diagnostico</text>
+<text x="1397" y="175" font-family="Arial" font-size="12" fill="#748377">FK → Diagnostico</text>
+<text x="1228" y="207" font-family="Arial" font-size="14" fill="#294638">nombre</text>
+<text x="1397" y="207" font-family="Arial" font-size="12" fill="#748377">VARCHAR(150)</text>
+<text x="1228" y="239" font-family="Arial" font-size="14" fill="#294638">descripcion</text>
+<text x="1397" y="239" font-family="Arial" font-size="12" fill="#748377">TEXT</text>
+<text x="1228" y="271" font-family="Arial" font-size="14" fill="#294638">fecha_inicio</text>
+<text x="1397" y="271" font-family="Arial" font-size="12" fill="#748377">DATE</text>
+<text x="1228" y="303" font-family="Arial" font-size="14" fill="#294638">fecha_fin</text>
+<text x="1397" y="303" font-family="Arial" font-size="12" fill="#748377">DATE</text>
+<text x="1228" y="335" font-family="Arial" font-size="14" fill="#294638">costo</text>
+<text x="1397" y="335" font-family="Arial" font-size="12" fill="#748377">DECIMAL(10,2)</text>
+<text x="1228" y="367" font-family="Arial" font-size="14" fill="#294638">estado</text>
+<text x="1397" y="367" font-family="Arial" font-size="12" fill="#748377">VARCHAR(20)</text>
+<rect x="1212" y="710" width="350" height="320" rx="12" fill="white" stroke="#d8e3d8"/>
+<path d="M1224 710 H1550 Q1562 710 1562 722 V759 H1212 V722 Q1212 710 1224 710" fill="#245e50"/>
+<text x="1230" y="742" font-family="Arial" font-size="20" font-weight="700" fill="white">Receta</text>
+<text x="1228" y="783" font-family="Arial" font-size="14" fill="#294638">id</text>
+<text x="1397" y="783" font-family="Arial" font-size="12" fill="#748377">PK · BigAutoField</text>
+<text x="1228" y="815" font-family="Arial" font-size="14" fill="#294638">diagnostico</text>
+<text x="1397" y="815" font-family="Arial" font-size="12" fill="#748377">FK → Diagnostico</text>
+<text x="1228" y="847" font-family="Arial" font-size="14" fill="#294638">medicamento</text>
+<text x="1397" y="847" font-family="Arial" font-size="12" fill="#748377">VARCHAR(150)</text>
+<text x="1228" y="879" font-family="Arial" font-size="14" fill="#294638">dosis</text>
+<text x="1397" y="879" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="1228" y="911" font-family="Arial" font-size="14" fill="#294638">frecuencia</text>
+<text x="1397" y="911" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="1228" y="943" font-family="Arial" font-size="14" fill="#294638">duracion</text>
+<text x="1397" y="943" font-family="Arial" font-size="12" fill="#748377">VARCHAR(100)</text>
+<text x="1228" y="975" font-family="Arial" font-size="14" fill="#294638">indicaciones</text>
+<text x="1397" y="975" font-family="Arial" font-size="12" fill="#748377">TEXT</text>
+<text x="1228" y="1007" font-family="Arial" font-size="14" fill="#294638">fecha_emision</text>
+<text x="1397" y="1007" font-family="Arial" font-size="12" fill="#748377">DATE</text>
+<text x="24" y="1123" font-family="Arial" font-size="13" fill="#607568">PK: clave primaria · FK: clave foránea · 1:N: uno a muchos · Eliminación protegida mediante PROTECT.</text>
+<text x="24" y="1148" font-family="Arial" font-size="13" fill="#607568">Exactamente siete tablas de negocio. Las tablas internas de autenticación y sesiones de Django no se muestran.</text></svg>

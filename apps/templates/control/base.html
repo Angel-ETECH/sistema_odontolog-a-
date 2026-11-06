@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Sonrisa Perfecta · Consultorio odontológico{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'control/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'control/css/uicons.css' %}">
+    <link rel="stylesheet" href="{% static 'control/css/consultorio.css' %}?v=sonrisa-viva-2">
+    <link rel="icon" type="image/png" href="{% static 'control/img/logo.png' %}">
+    <script src="{% static 'control/js/app.js' %}" defer></script>
+</head>
+<body class="{% if not user.is_authenticated %}acceso{% endif %}">
+<a class="saltar" href="#contenido">Ir al contenido</a>
+{% if user.is_authenticated %}
+<aside class="barra">
+    <a class="marca" href="{% url 'inicio' %}"><span class="simbolo">{% include 'control/icono.html' with nombre='marca' %}</span><span>sonrisa<span class="segunda">perfecta.</span><small>CONSULTORIO ODONTOLÓGICO</small></span></a>
+    <p class="etiqueta-nav">CONSULTORIO</p>
+    <nav aria-label="Navegación principal">
+        <a class="{% if request.resolver_match.url_name == 'inicio' %}activo{% endif %}" href="{% url 'inicio' %}">{% include 'control/icono.html' with nombre='inicio' %} Panel de atención</a>
+        {% for clave, titulo in menu %}<a class="{% if seccion == clave and request.resolver_match.url_name != 'reportes' %}activo{% endif %}" href="{% url 'listado' clave %}">{% include 'control/icono.html' with nombre=clave %} {{ titulo }}</a>{% endfor %}
+        {% if perms.apps.view_cita %}<a class="{% if request.resolver_match.url_name == 'reportes' %}activo{% endif %}" href="{% url 'reportes' 'citas' %}">{% include 'control/icono.html' with nombre='reportes' %} Reportes</a>{% endif %}
+    </nav>
+    <div class="barra-pie">{% include 'control/icono.html' with nombre='candado' %}<div>Área del personal<p>Información clínica protegida</p></div></div>
+</aside>
+{% endif %}
+<div class="principal">
+{% if user.is_authenticated %}<header class="cabecera"><span>Gestión del consultorio <span class="separador">/</span> <strong>{% if info %}{{ info.titulo }}{% else %}Panel de atención{% endif %}</strong></span><div class="cuenta"><span class="avatar">{{ user.username|first|upper }}</span><span>{{ user.username }}</span>{% if user.is_staff %}<a href="{% url 'admin:index' %}">Administración</a>{% endif %}<form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="salir" type="submit">{% include 'control/icono.html' with nombre='salir' %}<span>Salir</span></button></form></div></header>{% endif %}
+<main id="contenido" class="contenedor">
+    {% if messages %}{% for mensaje in messages %}<div class="aviso {{ mensaje.tags }}" role="status">{{ mensaje }}</div>{% endfor %}{% endif %}
+    {% block content %}{% endblock %}
+</main>
+{% if user.is_authenticated %}<footer><span>Sonrisa Perfecta · Información clínica confidencial</span><span class="creditos-iconos">Iconos de <a href="https://www.flaticon.com/authors/freepik" target="_blank" rel="noopener noreferrer">Freepik</a> y <a href="https://www.flaticon.es/uicons" target="_blank" rel="noopener noreferrer">UIcons — Flaticon</a></span></footer>{% endif %}
+</div>
+</body></html>

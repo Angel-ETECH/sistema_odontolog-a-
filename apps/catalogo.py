@@ -1,0 +1,13 @@
+from .models import Paciente, Especialidad, Odontologo, Cita, Diagnostico, Tratamiento, Receta
+from .forms import PacienteForm, EspecialidadForm, OdontologoForm, CitaForm, DiagnosticoForm, TratamientoForm, RecetaForm
+
+# Configuración compartida: las vistas conservan el mismo CRUD para cada módulo.
+SECCIONES = {
+    'pacientes': dict(modelo=Paciente, formulario=PacienteForm, titulo='Pacientes', singular='paciente', campos=['nombres', 'apellidos', 'dni', 'telefono', 'correo'], buscar=['nombres', 'apellidos', 'dni']),
+    'odontologos': dict(modelo=Odontologo, formulario=OdontologoForm, titulo='Odontólogos', singular='odontólogo', campos=['nombres', 'apellidos', 'numero_colegiatura', 'especialidad', 'estado'], buscar=['nombres', 'apellidos', 'numero_colegiatura', 'especialidad__nombre'], relaciones=['especialidad']),
+    'especialidades': dict(modelo=Especialidad, formulario=EspecialidadForm, titulo='Especialidades', singular='especialidad', campos=['nombre', 'descripcion', 'estado'], buscar=['nombre', 'descripcion']),
+    'citas': dict(modelo=Cita, formulario=CitaForm, titulo='Citas', singular='cita', campos=['paciente', 'odontologo', 'fecha', 'hora', 'motivo', 'estado'], buscar=['paciente__nombres', 'paciente__apellidos', 'paciente__dni', 'motivo', 'odontologo__apellidos'], relaciones=['paciente', 'odontologo'], fecha='fecha', clinico=''),
+    'diagnosticos': dict(modelo=Diagnostico, formulario=DiagnosticoForm, titulo='Diagnósticos', singular='diagnóstico', campos=['cita', 'descripcion', 'fecha'], buscar=['cita__paciente__nombres', 'cita__paciente__apellidos', 'cita__paciente__dni', 'descripcion'], relaciones=['cita__paciente', 'cita__odontologo'], fecha='fecha', clinico='cita'),
+    'tratamientos': dict(modelo=Tratamiento, formulario=TratamientoForm, titulo='Tratamientos', singular='tratamiento', campos=['diagnostico', 'nombre', 'fecha_inicio', 'fecha_fin', 'costo', 'estado'], buscar=['diagnostico__cita__paciente__nombres', 'diagnostico__cita__paciente__apellidos', 'diagnostico__cita__paciente__dni', 'nombre'], relaciones=['diagnostico__cita__paciente', 'diagnostico__cita__odontologo'], fecha='fecha_inicio', clinico='diagnostico.cita'),
+    'recetas': dict(modelo=Receta, formulario=RecetaForm, titulo='Recetas', singular='receta', campos=['diagnostico', 'medicamento', 'dosis', 'frecuencia', 'duracion', 'fecha_emision'], buscar=['diagnostico__cita__paciente__nombres', 'diagnostico__cita__paciente__apellidos', 'diagnostico__cita__paciente__dni', 'medicamento'], relaciones=['diagnostico__cita__paciente', 'diagnostico__cita__odontologo'], fecha='fecha_emision', clinico='diagnostico.cita'),
+}

@@ -1,0 +1,11 @@
+@font-face{font-family:SP-UIcons;src:url(../img/uicons.woff2) format("woff2");font-display:block}
+.icono-ui:before{font-family:SP-UIcons!important;font-style:normal;font-weight:normal;line-height:1;-webkit-font-smoothing:antialiased;display:block}
+.ui-inicio:before{content:"\f16c"}
+.ui-buscar:before{content:"\fbba"}
+.ui-editar:before{content:"\fa29"}
+.ui-eliminar:before{content:"\fe17"}
+.ui-imprimir:before{content:"\fad6"}
+.ui-mas:before{content:"\faac"}
+.ui-flecha:before{content:"\f19b"}
+.ui-salir:before{content:"\fc0c"}
+.ui-candado:before{content:"\f8d5"}
